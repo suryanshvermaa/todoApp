@@ -24,7 +24,7 @@ const index = () => {
   const [email,setEmail]=useState('');
    const [password,setPassword]=useState('');
    const login=()=>{
-    axios.post('http://localhost:8080/login',{email,password}).then(async(res)=>{
+    axios.post('http://localhost:3000/login',{email,password}).then(async(res)=>{
         const token=res.data.token;
         await AsyncStorage.setItem('token',token);
         setEmail('');

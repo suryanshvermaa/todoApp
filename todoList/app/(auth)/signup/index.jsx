@@ -21,14 +21,16 @@ const index = () => {
     
    
     try {
-      axios.post('http://localhost:8080/signup',{name,email,password}).then(async(res)=>{
+      axios.post('http://localhost:3000/signup',{name,email,password}).then(async(res)=>{
         const token=res.data.token;
         await AsyncStorage.setItem('token',token)
+        setName('')
         setEmail('');
         setPassword('');
+        router.push('/(tabs)/home');
     })
     } catch (error) {
-      console.log('err')
+      console.log(error)
     }
    
 

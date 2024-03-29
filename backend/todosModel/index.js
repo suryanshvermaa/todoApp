@@ -2,23 +2,23 @@ const mongoose=require('mongoose');
 
 const todosSchema=new mongoose.Schema({
    task:{
-      Type:String,
+      type:String,
       required:true
    },
    category:{
-      Type:String,
+      type:String,
       required:true
    },
    userId:{
-      Type:mongoose.Schema.Types.ObjectId,
+      type:mongoose.Schema.Types.ObjectId,
       required:true,
    },
    date:{
-      Type:String,
+      type:String,
       required:true
    },
    status:{
-      Type:String,
+      type:String,
       required:true,
    }
       

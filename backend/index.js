@@ -10,13 +10,15 @@ const app=express();
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
-
+const mongoCon= async()=>{
+ await mongoose.connect('mongodb://127.0.0.1:27017/test');
+}
 
 const connection=()=>{
     
   try {
-     
-        mongoose.connect('mongodb://127.0.0.1:27017/test');
+       mongoCon();
+       
         console.log('db connected');
     
 
@@ -121,5 +123,5 @@ app.get('/todos/:userId/pending',async(req,res)=>{
 
 
 app.listen(3000,()=>{
-    console.log("server is running on port 8080");
+    console.log("server is running on port 3000");
 })
